@@ -1,47 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
+import Gallery from "./components/Gallery";
+import Contact from "./components/Contact";
 
 // PUBLIC_INTERFACE
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  // Effect to apply theme to document element
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  // PUBLIC_INTERFACE
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
-
+  /** App root - assembles navigation, hero, gallery, and contact sections. */
   return (
-    <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-white">
+      <NavBar />
+      <main>
+        <Hero />
+        <Gallery />
+        <Contact />
+      </main>
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="container flex flex-col items-center justify-between gap-3 py-6 text-sm text-slate-500 md:flex-row">
+          <p>© {new Date().getFullYear()} Pet Gallery. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <a className="hover:text-primary" href="#home">Home</a>
+            <a className="hover:text-primary" href="#gallery">Gallery</a>
+            <a className="hover:text-primary" href="#contact">Contact</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

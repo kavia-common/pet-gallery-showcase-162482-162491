@@ -4,11 +4,13 @@
   background: rgba(255,255,255,0.8);
 }
 
+/* Decorative hero background using secondary and accent palette */
 .hero-gradient {
   background: radial-gradient(1200px 600px at 80% -20%, rgba(56,189,248,0.25), transparent 60%),
               radial-gradient(800px 400px at -10% 0%, rgba(244,114,182,0.25), transparent 60%);
 }
 
+/* Subtle hover lift for cards */
 .card-hover {
   transition: transform .2s ease, box-shadow .2s ease;
 }
