@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/pet-gallery-showcase-162482-162491/pet_frontend"
+}
